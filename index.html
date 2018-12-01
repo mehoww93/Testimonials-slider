@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="css/glider.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Arvo:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto:300,700" rel="stylesheet">
+    <title>Testimonials with glider.js</title>
+</head>
+
+<body>
+  <div class="container">
+  
+   <div class="glider-contain multiple">
+       <h1>User Testimonials</h1>
+       <button class="glider-prev">
+           <i class="fa fa-chevron-left"></i>
+       </button>
+       <div class="glider">
+           <figure>
+               <blockquote>"Working with them was the best experience ever. First meeting with the team and you are sure you did the right choice. Keep on doing great stuff!</blockquote>
+               <figcaption>Alexander Meija</figcaption>
+           </figure>
+           
+             <figure>
+               <blockquote>"Wish I knew about them earlier. Their newest UI design for music app is awesome! Seriously thinking about hiring them to redesign mine."</blockquote>
+                 <figcaption>Arnold Briggs</figcaption>
+           </figure>
+           
+             <figure>
+               <blockquote>"Heard about them from a friend, working for a branding company. We started our cooperation in May, can't wait for the results."</blockquote>
+               <figcaption>Allen Castillo</figcaption>
+           </figure>
+           
+             <figure>
+               <blockquote>"This is unbelievable. After using their SEO optimization service my website is in top 3 in Google. Totally worth the price!"</blockquote>
+               <figcaption>Robert Carson</figcaption>
+           </figure>
+           
+             <figure>
+               <blockquote>"I couldn't asked for more than this! The CMS training went so well now everyone wants to work with our new website, thank you guys!"</blockquote>
+               <figcaption>John McFarlane</figcaption>
+           </figure>
+       </div>
+       <button class="glider-next">
+           <i class="fa fa-chevron-right"></i>
+       </button>
+       <div id="dots" class="glider-dots"></div>
+   </div>
+   </div>
+   <script src="js/glider.min.js"></script>
+   <script>
+       new Glider(document.querySelector('.glider'), {
+        slidesToShow: 1,
+        draggable: true,
+        dots: '#dots',
+        rewind:true,
+        scrollLock:true,
+        scrollLockDelay: 100,
+        arrows: {
+            prev: '.glider-prev',
+            next: '.glider-next'
+        }
+    
+       })
+    </script>
+    <script>
+    document.addEventListener('glider-loaded', hideFFScrollBars);
+document.addEventListener('glider-refresh', hideFFScrollBars);
+function hideFFScrollBars(e){
+  var scrollbarHeight = 17; // Currently 17, may change with updates
+  if(/firefox/i.test(navigator.userAgent)){
+    // We only need to appy to desktop. Firefox for mobile uses
+    // a different rendering engine (WebKit)
+    if (window.innerWidth > 575){
+      e.target.parentNode.style.height = (e.target.offsetHeight - scrollbarHeight) + 'px'
+    }
+  }
+}</script>
+</body>
+</html>
